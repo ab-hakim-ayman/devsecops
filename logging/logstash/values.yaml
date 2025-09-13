@@ -1,0 +1,15 @@
+# values.yaml for Logstash Helm chart
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  limits:
+    cpu: 1
+    memory: 1Gi
+
+persistence:
+  enabled: true
+  storageClass: "standard"
+  size: 10Gi

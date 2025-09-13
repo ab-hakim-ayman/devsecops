@@ -1,0 +1,1602 @@
+{
+	"Golang errors": {
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/cmd/main.go": [
+			{
+				"line": 9,
+				"column": 2,
+				"error": "could not import go-fiber-kit/routes (invalid package name: \"\")"
+			},
+			{
+				"line": 10,
+				"column": 12,
+				"error": "could not import go-fiber-kit/internal/auth/model (invalid package name: \"\")"
+			},
+			{
+				"line": 11,
+				"column": 15,
+				"error": "could not import go-fiber-kit/internal/profile/model (invalid package name: \"\")"
+			},
+			{
+				"line": 12,
+				"column": 12,
+				"error": "could not import go-fiber-kit/internal/user/model (invalid package name: \"\")"
+			},
+			{
+				"line": 14,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 15,
+				"column": 2,
+				"error": "could not import gorm.io/driver/postgres (invalid package name: \"\")"
+			},
+			{
+				"line": 16,
+				"column": 2,
+				"error": "could not import gorm.io/gorm (invalid package name: \"\")"
+			},
+			{
+				"line": 61,
+				"column": 9,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/auth/handler/auth_handler.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/auth/dto (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/auth/service (invalid package name: \"\")"
+			},
+			{
+				"line": 9,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 21,
+				"column": 35,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 24,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 28,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 34,
+				"column": 32,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 37,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 44,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 50,
+				"column": 33,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 53,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 57,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 59,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 63,
+				"column": 36,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 67,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 71,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 73,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 77,
+				"column": 34,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 80,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 86,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 92,
+				"column": 35,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 95,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 100,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 123,
+				"column": 40,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 127,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 129,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 133,
+				"column": 34,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 136,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 139,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 143,
+				"column": 41,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 146,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 150,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 152,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 156,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 160,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 164,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 167,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 170,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 173,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 177,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 181,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 184,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 186,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 189,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 193,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 196,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 198,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 202,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 205,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 211,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 214,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 218,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 220,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 224,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 227,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 232,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 236,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 239,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 242,
+				"column": 36,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 245,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 249,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 253,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 255,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 259,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 262,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 266,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 268,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 271,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 274,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 278,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 282,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 285,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 287,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 290,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 293,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 297,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 301,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 303,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 306,
+				"column": 39,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 309,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 312,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 314,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 318,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 321,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 325,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 330,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 333,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 337,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 340,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 342,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 345,
+				"column": 39,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 348,
+				"column": 49,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 352,
+				"column": 47,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 355,
+				"column": 56,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 357,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 360,
+				"column": 42,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 362,
+				"column": 16,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/auth/repository/auth_repository.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/auth/model (invalid package name: \"\")"
+			},
+			{
+				"line": 7,
+				"column": 2,
+				"error": "could not import gorm.io/gorm (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/auth/routes/auth_routes.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/auth/handler (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 9,
+				"column": 22,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/auth/service/auth_service.go": [
+			{
+				"line": 8,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/auth/dto (invalid package name: \"\")"
+			},
+			{
+				"line": 9,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/auth/model (invalid package name: \"\")"
+			},
+			{
+				"line": 10,
+				"column": 11,
+				"error": "could not import go-fiber-kit/internal/auth/repository (invalid package name: \"\")"
+			},
+			{
+				"line": 11,
+				"column": 11,
+				"error": "could not import go-fiber-kit/internal/user/repository (invalid package name: \"\")"
+			},
+			{
+				"line": 12,
+				"column": 12,
+				"error": "could not import go-fiber-kit/internal/user/model (invalid package name: \"\")"
+			},
+			{
+				"line": 18,
+				"column": 2,
+				"error": "could not import github.com/golang-jwt/jwt/v5 (invalid package name: \"\")"
+			},
+			{
+				"line": 19,
+				"column": 2,
+				"error": "could not import github.com/pquerna/otp/totp (invalid package name: \"\")"
+			},
+			{
+				"line": 20,
+				"column": 2,
+				"error": "could not import golang.org/x/crypto/bcrypt (invalid package name: \"\")"
+			},
+			{
+				"line": 55,
+				"column": 18,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 61,
+				"column": 15,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 61,
+				"column": 33,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 69,
+				"column": 19,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 75,
+				"column": 16,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 75,
+				"column": 34,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 160,
+				"column": 16,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 160,
+				"column": 48,
+				"error": "undefined: jwt"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/profile/handler/profile_handler.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/profile/dto (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/profile/service (invalid package name: \"\")"
+			},
+			{
+				"line": 8,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 19,
+				"column": 40,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 23,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 23,
+				"column": 46,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 28,
+				"column": 43,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 32,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 32,
+				"column": 48,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 36,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 36,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 41,
+				"column": 42,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 45,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 45,
+				"column": 48,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 49,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 49,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 54,
+				"column": 42,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 58,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 58,
+				"column": 48,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 62,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 62,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 67,
+				"column": 42,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 70,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 70,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 72,
+				"column": 22,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 75,
+				"column": 41,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 79,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 79,
+				"column": 48,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 83,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 83,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 88,
+				"column": 41,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 91,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 91,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 93,
+				"column": 22,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 96,
+				"column": 43,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 100,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 100,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 105,
+				"column": 40,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 109,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 109,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 114,
+				"column": 40,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 118,
+				"column": 19,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 118,
+				"column": 57,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 124,
+				"column": 19,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/profile/repository/profile_repository.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/profile/model (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 2,
+				"error": "could not import gorm.io/gorm (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/profile/routes/profile_routes.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/profile/handler (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 9,
+				"column": 22,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/profile/service/profile_service.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/profile/dto (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/profile/model (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 11,
+				"error": "could not import go-fiber-kit/internal/profile/repository (invalid package name: \"\")"
+			},
+			{
+				"line": 7,
+				"column": 11,
+				"error": "could not import go-fiber-kit/internal/user/repository (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/user/handler/user_handler.go": [
+			{
+				"line": 5,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/dto (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/model (invalid package name: \"\")"
+			},
+			{
+				"line": 7,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/service (invalid package name: \"\")"
+			},
+			{
+				"line": 9,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 10,
+				"column": 2,
+				"error": "could not import golang.org/x/crypto/bcrypt (invalid package name: \"\")"
+			},
+			{
+				"line": 22,
+				"column": 36,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 25,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 31,
+				"column": 34,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 35,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 39,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 45,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 48,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 59,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 65,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 69,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 73,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 77,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 95,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 101,
+				"column": 44,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 106,
+				"column": 37,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 110,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 114,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 117,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 119,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 123,
+				"column": 32,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 128,
+				"column": 35,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 132,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 147,
+				"column": 41,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 151,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 155,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 158,
+				"column": 41,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 162,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 165,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 170,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 173,
+				"column": 39,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 177,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 180,
+				"column": 39,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 184,
+				"column": 16,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 187,
+				"column": 38,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 189,
+				"column": 16,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/user/model/user.go": [
+			{
+				"line": 4,
+				"column": 15,
+				"error": "could not import go-fiber-kit/internal/profile/model (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 12,
+				"error": "could not import go-fiber-kit/internal/auth/model (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/user/repository/user_repository.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/model (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 2,
+				"error": "could not import gorm.io/gorm (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/user/routes/user_routes.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/handler (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 2,
+				"error": "could not import go-fiber-kit/middleware (invalid package name: \"\")"
+			},
+			{
+				"line": 7,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 10,
+				"column": 22,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/internal/user/service/user_service.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/model (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 2,
+				"error": "could not import go-fiber-kit/internal/user/repository (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/middleware/auth.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go-fiber-kit/util (invalid package name: \"\")"
+			},
+			{
+				"line": 7,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 11,
+				"column": 23,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 12,
+				"column": 17,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 15,
+				"column": 20,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 15,
+				"column": 51,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 20,
+				"column": 20,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 20,
+				"column": 51,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 26,
+				"column": 20,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 26,
+				"column": 51,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/middleware/cors.go": [
+			{
+				"line": 5,
+				"column": 23,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 6,
+				"column": 20,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 11,
+				"column": 33,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/middleware/logger.go": [
+			{
+				"line": 7,
+				"column": 2,
+				"error": "could not import go.uber.org/zap (invalid package name: \"\")"
+			},
+			{
+				"line": 10,
+				"column": 43,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 11,
+				"column": 17,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/middleware/rate_limit.go": [
+			{
+				"line": 7,
+				"column": 5,
+				"error": "could not import github.com/gofiber/fiber/v2/middleware/limiter (invalid package name: \"\")"
+			},
+			{
+				"line": 10,
+				"column": 28,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 14,
+				"column": 31,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 17,
+				"column": 31,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 18,
+				"column": 29,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 18,
+				"column": 63,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/middleware/recovery.go": [
+			{
+				"line": 8,
+				"column": 45,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 9,
+				"column": 17,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 13,
+				"column": 14,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 13,
+				"column": 52,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/pkg/logger/logger.go": [
+			{
+				"line": 4,
+				"column": 2,
+				"error": "could not import go.uber.org/zap (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/pkg/response/response.go": [
+			{
+				"line": 3,
+				"column": 8,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 17,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 6,
+				"column": 18,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 6,
+				"column": 39,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 13,
+				"column": 15,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 14,
+				"column": 10,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 24,
+				"column": 17,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 25,
+				"column": 18,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 25,
+				"column": 44,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/routes/router.go": [
+			{
+				"line": 5,
+				"column": 14,
+				"error": "could not import go-fiber-kit/internal/user/handler (invalid package name: \"\")"
+			},
+			{
+				"line": 6,
+				"column": 11,
+				"error": "could not import go-fiber-kit/internal/user/repository (invalid package name: \"\")"
+			},
+			{
+				"line": 7,
+				"column": 13,
+				"error": "could not import go-fiber-kit/internal/user/routes (invalid package name: \"\")"
+			},
+			{
+				"line": 8,
+				"column": 14,
+				"error": "could not import go-fiber-kit/internal/user/service (invalid package name: \"\")"
+			},
+			{
+				"line": 11,
+				"column": 14,
+				"error": "could not import go-fiber-kit/internal/auth/handler (invalid package name: \"\")"
+			},
+			{
+				"line": 12,
+				"column": 11,
+				"error": "could not import go-fiber-kit/internal/auth/repository (invalid package name: \"\")"
+			},
+			{
+				"line": 13,
+				"column": 13,
+				"error": "could not import go-fiber-kit/internal/auth/routes (invalid package name: \"\")"
+			},
+			{
+				"line": 14,
+				"column": 14,
+				"error": "could not import go-fiber-kit/internal/auth/service (invalid package name: \"\")"
+			},
+			{
+				"line": 17,
+				"column": 17,
+				"error": "could not import go-fiber-kit/internal/profile/handler (invalid package name: \"\")"
+			},
+			{
+				"line": 18,
+				"column": 14,
+				"error": "could not import go-fiber-kit/internal/profile/repository (invalid package name: \"\")"
+			},
+			{
+				"line": 19,
+				"column": 16,
+				"error": "could not import go-fiber-kit/internal/profile/routes (invalid package name: \"\")"
+			},
+			{
+				"line": 20,
+				"column": 17,
+				"error": "could not import go-fiber-kit/internal/profile/service (invalid package name: \"\")"
+			},
+			{
+				"line": 22,
+				"column": 2,
+				"error": "could not import github.com/gofiber/fiber/v2 (invalid package name: \"\")"
+			},
+			{
+				"line": 23,
+				"column": 2,
+				"error": "could not import gorm.io/gorm (invalid package name: \"\")"
+			},
+			{
+				"line": 26,
+				"column": 23,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 28,
+				"column": 33,
+				"error": "undefined: fiber"
+			},
+			{
+				"line": 29,
+				"column": 17,
+				"error": "undefined: fiber"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/util/hash.go": [
+			{
+				"line": 3,
+				"column": 8,
+				"error": "could not import golang.org/x/crypto/bcrypt (invalid package name: \"\")"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/util/jwt.go": [
+			{
+				"line": 6,
+				"column": 2,
+				"error": "could not import github.com/golang-jwt/jwt/v5 (invalid package name: \"\")"
+			},
+			{
+				"line": 13,
+				"column": 2,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 19,
+				"column": 21,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 20,
+				"column": 15,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 21,
+				"column": 15,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 24,
+				"column": 11,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 24,
+				"column": 29,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 29,
+				"column": 16,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 29,
+				"column": 72,
+				"error": "undefined: jwt"
+			},
+			{
+				"line": 38,
+				"column": 14,
+				"error": "undefined: jwt"
+			}
+		],
+		"/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/util/validator.go": [
+			{
+				"line": 3,
+				"column": 8,
+				"error": "could not import github.com/go-playground/validator/v10 (invalid package name: \"\")"
+			},
+			{
+				"line": 5,
+				"column": 16,
+				"error": "undefined: validator"
+			}
+		]
+	},
+	"Issues": [
+		{
+			"severity": "HIGH",
+			"confidence": "LOW",
+			"cwe": {
+				"id": "798",
+				"url": "https://cwe.mitre.org/data/definitions/798.html"
+			},
+			"rule_id": "G101",
+			"details": "Potential hardcoded credentials",
+			"file": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/constants/errors.go",
+			"code": "4: \tErrUserNotFound      = \"User not found\"\n5: \tErrInvalidCredential = \"Invalid credentials\"\n6: \tErrUnauthorized      = \"Unauthorized\"\n",
+			"line": "5",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G301",
+			"details": "Expect directory permissions to be 0750 or less",
+			"file": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/util/file.go",
+			"code": "9: func SaveFile(file *multipart.FileHeader, folder string) (string, error) {\n10: \tos.MkdirAll(folder, os.ModePerm)\n11: \tdst := filepath.Join(folder, file.Filename)\n",
+			"line": "10",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "276",
+				"url": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G306",
+			"details": "Expect WriteFile permissions to be 0600 or less",
+			"file": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/util/file.go",
+			"code": "11: \tdst := filepath.Join(folder, file.Filename)\n12: \terr := os.WriteFile(dst, nil, 0644)\n13: \tif err != nil {\n",
+			"line": "12",
+			"column": "9",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/go-fiber-kit-devsecops/util/file.go",
+			"code": "9: func SaveFile(file *multipart.FileHeader, folder string) (string, error) {\n10: \tos.MkdirAll(folder, os.ModePerm)\n11: \tdst := filepath.Join(folder, file.Filename)\n",
+			"line": "10",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		}
+	],
+	"Stats": {
+		"files": 41,
+		"lines": 2375,
+		"nosec": 0,
+		"found": 4
+	},
+	"GosecVersion": "dev"
+}

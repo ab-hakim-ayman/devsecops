@@ -1,0 +1,5 @@
+- rule: Privileged Container Alert
+  desc: "Detect containers running in privileged mode"
+  condition: container.privileged=true
+  output: "Privileged container (user=%user.name command=%proc.cmdline container=%container.id image=%container.image.repository)"
+  priority: WARNING

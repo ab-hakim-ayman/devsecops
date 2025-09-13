@@ -1,0 +1,18 @@
+{
+  "index_patterns": ["security-*"],
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1,
+    "refresh_interval": "1s"
+  },
+  "mappings": {
+    "properties": {
+      "@timestamp": { "type": "date" },
+      "user": { "type": "keyword" },
+      "action": { "type": "keyword" },
+      "host": { "type": "keyword" },
+      "message": { "type": "text" },
+      "severity": { "type": "keyword" }
+    }
+  }
+}

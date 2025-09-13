@@ -1,0 +1,6 @@
+ruleset:
+  include:
+    - Security
+  severity:
+    - Critical
+    - High

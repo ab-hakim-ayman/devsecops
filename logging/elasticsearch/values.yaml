@@ -1,0 +1,29 @@
+# values.yaml for Elasticsearch Helm chart
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 2Gi
+  limits:
+    cpu: 2
+    memory: 4Gi
+
+volumeClaimTemplate:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: "standard"
+  resources:
+    requests:
+      storage: 50Gi
+
+clusterName: "logging-cluster"
+
+nodeSelector: {}
+tolerations: []
+
+esJavaOpts: "-Xmx1g -Xms1g"
+
+# Security & user setup
+securityContext:
+  fsGroup: 1000
+  runAsUser: 1000

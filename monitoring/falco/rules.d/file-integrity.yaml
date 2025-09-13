@@ -1,0 +1,5 @@
+- rule: File Integrity Alert
+  desc: "Sensitive file modification"
+  condition: evt.type=open and fd.name in (/etc/passwd, /etc/shadow)
+  output: "Sensitive file opened (user=%user.name file=%fd.name container=%container.id)"
+  priority: CRITICAL

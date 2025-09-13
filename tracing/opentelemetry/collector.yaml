@@ -1,0 +1,31 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+processors:
+  batch:
+
+exporters:
+  jaeger:
+    endpoint: "jaeger-collector.tracing.svc.cluster.local:14250"
+    tls:
+      insecure: true
+  prometheus:
+    listen_address: "0.0.0.0:8888" # Metrics only
+  elasticapm:
+    server_url: "http://elastic-apm-server.logging.svc.cluster.local:8200"
+    secret_token: "CHANGE_ME"
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [jaeger, elasticapm] # Only trace exporters
+
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus] # Only metrics exporter

@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Cluster CPU Usage (avg)",
+      "targets": [
+        {
+          "expr": "100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "format": "short"
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Cluster Memory Usage",
+      "targets": [
+        {
+          "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100",
+          "legendFormat": "{{instance}}",
+          "refId": "B"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      },
+      "yaxes": [
+        {
+          "format": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "format": "short"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 16,
+  "title": "Infra Overview",
+  "version": 1
+}

@@ -1,0 +1,4 @@
+standard: PSR12
+sniffs:
+  - Generic.Security
+  - Squiz.Security

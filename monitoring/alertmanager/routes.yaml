@@ -1,0 +1,15 @@
+# Routes split per team / severity
+route:
+  receiver: "ops-email"
+  group_by: ["alertname", "cluster", "service"]
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+  routes:
+    - match:
+        severity: critical
+      receiver: "pagerduty"
+      continue: true
+    - match_re:
+        team: infra|platform
+      receiver: "ops-email"

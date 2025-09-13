@@ -1,0 +1,55 @@
+# values.yaml for Grafana (Helm chart)
+replicaCount: 2
+
+persistence:
+  enabled: true
+  storageClassName: "standard"
+  size: 10Gi
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+adminUser: grafana_admin
+# TODO: store this as Kubernetes secret
+adminPassword: "CHANGE_ME_SECURE_PASSWORD"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - grafana.example.com
+
+# Provisioning datasources
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus-server.monitoring.svc.cluster.local:9090
+        isDefault: true
+        editable: false
+
+# Provisioning dashboards directory
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+      - name: "default"
+        orgId: 1
+        folder: ""
+        type: file
+        disableDeletion: false
+        options:
+          path: /var/lib/grafana/dashboards

@@ -1,0 +1,14 @@
+# values.yaml for node-exporter Helm chart
+hostRootFsMount: true # required to get full node metrics
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 200Mi
+  limits:
+    cpu: 500m
+    memory: 500Mi
+
+serviceMonitor:
+  enabled: true
+  interval: 15s

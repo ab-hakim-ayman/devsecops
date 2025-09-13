@@ -1,0 +1,5 @@
+- rule: Shell in Container
+  desc: "Detect shell execution inside containers"
+  condition: evt.type = execve and container.id != host and proc.name in (bash, sh, zsh)
+  output: "Shell executed inside container (user=%user.name command=%proc.cmdline container=%container.id)"
+  priority: WARNING

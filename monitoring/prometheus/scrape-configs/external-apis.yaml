@@ -1,0 +1,11 @@
+# Scrape external APIs or endpoints
+- job_name: "external-apis"
+  metrics_path: /metrics
+  scrape_interval: 30s
+  static_configs:
+    - targets:
+        - api1.example.com:443
+        - api2.example.com:443
+  scheme: https
+  tls_config:
+    insecure_skip_verify: false

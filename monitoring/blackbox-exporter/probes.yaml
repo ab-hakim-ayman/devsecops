@@ -1,0 +1,11 @@
+# Example probe definitions for Prometheus
+modules:
+  - name: http_probe_example
+    prober: http
+    url: https://example.com/health
+    interval: 60s
+
+  - name: tcp_probe_example
+    prober: tcp
+    url: example.com:443
+    interval: 60s

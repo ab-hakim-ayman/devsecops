@@ -1,0 +1,26 @@
+# values.yaml for Filebeat Helm chart
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+filebeatConfig:
+  filebeat.yml: |
+    filebeat.inputs:
+      - type: log
+        enabled: true
+        paths:
+          - /var/log/*.log
+
+    output.elasticsearch:
+      hosts: ["http://elasticsearch.logging.svc.cluster.local:9200"]
+      username: elastic
+      password: "CHANGE_ME"
+
+    setup.kibana:
+      host: "http://kibana.logging.svc.cluster.local:5601"

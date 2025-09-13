@@ -1,0 +1,26 @@
+# values.yaml for Kibana Helm chart
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+persistence:
+  enabled: true
+  storageClassName: "standard"
+  size: 5Gi
+
+service:
+  type: ClusterIP
+  port: 5601
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - kibana.example.com

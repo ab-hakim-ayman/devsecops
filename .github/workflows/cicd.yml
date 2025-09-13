@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  lint-test-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Linters
+        run: pre-commit run --all-files
+
+      - name: Run Unit Tests
+        run: pytest --cov=.
+
+      - name: Run SAST
+        run: semgrep --config .semgrep.yml
+
+      - name: Build Docker image
+        run: docker build -t myorg/dev-sec-ops:${{ github.sha }} .
+
+      - name: Scan Docker image
+        run: trivy image --exit-code 1 myorg/dev-sec-ops:${{ github.sha }}
+
+      - name: Push Docker image
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push myorg/dev-sec-ops:${{ github.sha }}
+
+      - name: Deploy to Kubernetes
+        uses: deliverybot/helm@v1
+        with:
+          chart: ./helm
+          values: ./helm/values-prod.yaml
+          release: dev-sec-ops

@@ -1,0 +1,5 @@
+{
+  "output": "json",
+  "include": ["G101", "G102"],
+  "exclude": ["G104"]
+}

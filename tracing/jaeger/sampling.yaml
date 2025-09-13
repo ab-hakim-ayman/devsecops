@@ -1,0 +1,9 @@
+# Sampling strategies for Jaeger
+strategies:
+  default_strategy:
+    type: probabilistic
+    param: 0.1 # 10% of traces sampled by default
+  service_strategies:
+    - service: "payment-service"
+      type: probabilistic
+      param: 1.0 # 100% sampling for payment-service

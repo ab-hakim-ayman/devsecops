@@ -1,0 +1,16 @@
+{
+  "title": "Audit Logs",
+  "panels": [
+    {
+      "title": "File Changes",
+      "type": "table",
+      "metrics": [
+        {
+          "field": "file_change",
+          "aggregation": "count"
+        }
+      ],
+      "datasource": "elasticsearch"
+    }
+  ]
+}

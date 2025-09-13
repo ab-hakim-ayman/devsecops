@@ -1,0 +1,35 @@
+- name: Ensure password authentication is disabled for SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^PasswordAuthentication"
+    line: "PasswordAuthentication no"
+  notify: Restart SSH
+
+- name: Ensure UFW firewall is installed
+  apt:
+    name: ufw
+    state: present
+    update_cache: yes
+
+- name: Enable UFW firewall
+  ufw:
+    state: enabled
+    policy: deny
+
+- name: Allow HTTP and HTTPS
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  loop:
+    - 80
+    - 443
+
+- name: Ensure automatic security updates are enabled
+  apt:
+    name: unattended-upgrades
+    state: latest
+
+- name: Disable root login
+  user:
+    name: root
+    shell: /usr/sbin/nologin

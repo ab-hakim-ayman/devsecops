@@ -1,0 +1,24 @@
+# values.yaml for Falco Helm chart
+enabled: true
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+# Use default rules + custom rules in rules.d/
+rules:
+  customRules: |
+    # Include custom Falco rules here
+    - rule: Detect Privileged Container
+      desc: "A container is running with privileged flag"
+      condition: container.privileged=true
+      output: "Privileged container detected (user=%user.name command=%proc.cmdline container=%container.id image=%container.image.repository)"
+      priority: WARNING
+
+files:
+  customRules: |
+    # Additional custom rule files can be placed here

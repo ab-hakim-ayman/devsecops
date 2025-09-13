@@ -1,0 +1,14 @@
+rules:
+  - id: python-django-sqli
+    patterns:
+      - pattern: "execute($SQL)"
+    message: "Potential SQL injection detected"
+    severity: ERROR
+    languages: [python]
+
+  - id: shell-injection
+    patterns:
+      - pattern: "os.system($CMD)"
+    message: "Potential shell injection"
+    severity: WARNING
+    languages: [python]

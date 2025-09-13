@@ -1,0 +1,329 @@
+{
+    "check_type": "ansible",
+    "results": {
+        "passed_checks": [
+            {
+                "check_id": "CKV_ANSIBLE_6",
+                "bc_check_id": "BC_ANSIBLE_GENERAL6",
+                "check_name": "Ensure that the force parameter is not used, as it disables signature validation and allows packages to be downgraded which can leave the system in a broken or inconsistent state",
+                "check_result": {
+                    "result": "PASSED",
+                    "results_configuration": {
+                        "name": "Ensure UFW firewall is installed",
+                        "apt": {
+                            "name": "ufw",
+                            "state": "present",
+                            "update_cache": true,
+                            "__startline__": 10,
+                            "__endline__": 14
+                        },
+                        "__startline__": 8,
+                        "__endline__": 14
+                    }
+                },
+                "code_block": [
+                    [
+                        8,
+                        "- name: Ensure UFW firewall is installed\n"
+                    ],
+                    [
+                        9,
+                        "  apt:\n"
+                    ],
+                    [
+                        10,
+                        "    name: ufw\n"
+                    ],
+                    [
+                        11,
+                        "    state: present\n"
+                    ],
+                    [
+                        12,
+                        "    update_cache: yes\n"
+                    ],
+                    [
+                        13,
+                        "\n"
+                    ],
+                    [
+                        14,
+                        "- name: Enable UFW firewall\n"
+                    ],
+                    [
+                        15,
+                        "  ufw:\n"
+                    ]
+                ],
+                "file_path": "/roles/hardening/tasks/main.yml",
+                "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                "file_line_range": [
+                    8,
+                    15
+                ],
+                "resource": "tasks.apt.Ensure UFW firewall is installed",
+                "evaluations": null,
+                "check_class": "checkov.ansible.checks.task.builtin.AptForce",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-6",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            },
+            {
+                "check_id": "CKV_ANSIBLE_6",
+                "bc_check_id": "BC_ANSIBLE_GENERAL6",
+                "check_name": "Ensure that the force parameter is not used, as it disables signature validation and allows packages to be downgraded which can leave the system in a broken or inconsistent state",
+                "check_result": {
+                    "result": "PASSED",
+                    "results_configuration": {
+                        "name": "Ensure automatic security updates are enabled",
+                        "apt": {
+                            "name": "unattended-upgrades",
+                            "state": "latest",
+                            "__startline__": 29,
+                            "__endline__": 32
+                        },
+                        "__startline__": 27,
+                        "__endline__": 32
+                    }
+                },
+                "code_block": [
+                    [
+                        27,
+                        "- name: Ensure automatic security updates are enabled\n"
+                    ],
+                    [
+                        28,
+                        "  apt:\n"
+                    ],
+                    [
+                        29,
+                        "    name: unattended-upgrades\n"
+                    ],
+                    [
+                        30,
+                        "    state: latest\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "- name: Disable root login\n"
+                    ],
+                    [
+                        33,
+                        "  user:\n"
+                    ]
+                ],
+                "file_path": "/roles/hardening/tasks/main.yml",
+                "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                "file_line_range": [
+                    27,
+                    33
+                ],
+                "resource": "tasks.apt.Ensure automatic security updates are enabled",
+                "evaluations": null,
+                "check_class": "checkov.ansible.checks.task.builtin.AptForce",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-6",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            },
+            {
+                "check_id": "CKV_ANSIBLE_5",
+                "bc_check_id": "BC_ANSIBLE_GENERAL5",
+                "check_name": "Ensure that packages with untrusted or missing signatures are not used",
+                "check_result": {
+                    "result": "PASSED",
+                    "results_configuration": {
+                        "name": "Ensure UFW firewall is installed",
+                        "apt": {
+                            "name": "ufw",
+                            "state": "present",
+                            "update_cache": true,
+                            "__startline__": 10,
+                            "__endline__": 14
+                        },
+                        "__startline__": 8,
+                        "__endline__": 14
+                    }
+                },
+                "code_block": [
+                    [
+                        8,
+                        "- name: Ensure UFW firewall is installed\n"
+                    ],
+                    [
+                        9,
+                        "  apt:\n"
+                    ],
+                    [
+                        10,
+                        "    name: ufw\n"
+                    ],
+                    [
+                        11,
+                        "    state: present\n"
+                    ],
+                    [
+                        12,
+                        "    update_cache: yes\n"
+                    ],
+                    [
+                        13,
+                        "\n"
+                    ],
+                    [
+                        14,
+                        "- name: Enable UFW firewall\n"
+                    ],
+                    [
+                        15,
+                        "  ufw:\n"
+                    ]
+                ],
+                "file_path": "/roles/hardening/tasks/main.yml",
+                "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                "file_line_range": [
+                    8,
+                    15
+                ],
+                "resource": "tasks.apt.Ensure UFW firewall is installed",
+                "evaluations": null,
+                "check_class": "checkov.ansible.checks.task.builtin.AptAllowUnauthenticated",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-5",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            },
+            {
+                "check_id": "CKV_ANSIBLE_5",
+                "bc_check_id": "BC_ANSIBLE_GENERAL5",
+                "check_name": "Ensure that packages with untrusted or missing signatures are not used",
+                "check_result": {
+                    "result": "PASSED",
+                    "results_configuration": {
+                        "name": "Ensure automatic security updates are enabled",
+                        "apt": {
+                            "name": "unattended-upgrades",
+                            "state": "latest",
+                            "__startline__": 29,
+                            "__endline__": 32
+                        },
+                        "__startline__": 27,
+                        "__endline__": 32
+                    }
+                },
+                "code_block": [
+                    [
+                        27,
+                        "- name: Ensure automatic security updates are enabled\n"
+                    ],
+                    [
+                        28,
+                        "  apt:\n"
+                    ],
+                    [
+                        29,
+                        "    name: unattended-upgrades\n"
+                    ],
+                    [
+                        30,
+                        "    state: latest\n"
+                    ],
+                    [
+                        31,
+                        "\n"
+                    ],
+                    [
+                        32,
+                        "- name: Disable root login\n"
+                    ],
+                    [
+                        33,
+                        "  user:\n"
+                    ]
+                ],
+                "file_path": "/roles/hardening/tasks/main.yml",
+                "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                "file_line_range": [
+                    27,
+                    33
+                ],
+                "resource": "tasks.apt.Ensure automatic security updates are enabled",
+                "evaluations": null,
+                "check_class": "checkov.ansible.checks.task.builtin.AptAllowUnauthenticated",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-5",
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            }
+        ],
+        "failed_checks": [],
+        "skipped_checks": [],
+        "parsing_errors": []
+    },
+    "summary": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 0,
+        "checkov_version": "3.2.470"
+    },
+    "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+}

@@ -1,0 +1,11 @@
+groups:
+  - name: node.rules
+    rules:
+      - alert: NodeHighMemory
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 90
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage on node {{ $labels.instance }}"
+          description: "Memory usage > 90% for the last 10 minutes."

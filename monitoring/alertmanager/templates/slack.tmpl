@@ -1,0 +1,19 @@
+{{ define "slack.default.title" }}
+[{{ .Status | toUpper }}] {{ .CommonLabels.alertname }}
+{{ end }}
+
+{{ define "slack.default.body" }}
+*Alert:* {{ .CommonLabels.alertname }}
+*Severity:* {{ .CommonLabels.severity }}
+*Instance:* {{ .CommonLabels.instance }}
+
+*Summary:*
+{{- range .Alerts }}
+  • {{ .Annotations.summary }}
+{{- end }}
+
+*Description:*
+{{- range .Alerts }}
+  • {{ .Annotations.description }}
+{{- end }}
+{{ end }}

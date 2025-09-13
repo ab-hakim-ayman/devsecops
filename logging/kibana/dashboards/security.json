@@ -1,0 +1,16 @@
+{
+  "title": "Security Overview",
+  "panels": [
+    {
+      "title": "Login Failures",
+      "type": "metric",
+      "metrics": [
+        {
+          "field": "failure_count",
+          "aggregation": "sum"
+        }
+      ],
+      "datasource": "elasticsearch"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Ignore known safe packages
+alpine:3.18
+debian:12

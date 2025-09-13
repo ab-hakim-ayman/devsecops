@@ -1,0 +1,13 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: ElasticsearchSnapshotRepository
+metadata:
+  name: s3-repo
+  namespace: logging
+spec:
+  type: s3
+  settings:
+    bucket: "my-es-backups" # TODO: replace with your S3 bucket
+    region: "us-east-1" # AWS region
+    access_key: "YOUR_ACCESS_KEY" # TODO: store in secret
+    secret_key: "YOUR_SECRET_KEY" # TODO: store in secret
+    compress: true

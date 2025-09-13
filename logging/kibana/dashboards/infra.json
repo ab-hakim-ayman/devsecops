@@ -1,0 +1,27 @@
+{
+  "title": "Infra Overview",
+  "panels": [
+    {
+      "title": "Node CPU Usage",
+      "type": "metric",
+      "metrics": [
+        {
+          "field": "usage_percent",
+          "aggregation": "avg"
+        }
+      ],
+      "datasource": "elasticsearch"
+    },
+    {
+      "title": "Node Memory Usage",
+      "type": "metric",
+      "metrics": [
+        {
+          "field": "memory_percent",
+          "aggregation": "avg"
+        }
+      ],
+      "datasource": "elasticsearch"
+    }
+  ]
+}

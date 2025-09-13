@@ -1,0 +1,11 @@
+groups:
+  - name: application.rules
+    rules:
+      - alert: HighHttpErrors
+        expr: sum(rate(http_requests_total{status=~"5.."}[5m])) by (app) > 5
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High 5xx error rate for app {{ $labels.app }}"
+          description: "More than 5 HTTP 5xx errors per minute in the last 5 minutes."

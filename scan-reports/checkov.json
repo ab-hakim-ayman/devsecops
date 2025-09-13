@@ -1,0 +1,2072 @@
+[
+    {
+        "check_type": "terraform",
+        "results": {
+            "passed_checks": [
+                {
+                    "check_id": "CKV_AWS_41",
+                    "bc_check_id": "BC_AWS_SECRETS_5",
+                    "check_name": "Ensure no hard coded AWS access key and secret key exists in provider",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            1,
+                            "provider \"aws\" {\n"
+                        ],
+                        [
+                            2,
+                            "  region = var.region\n"
+                        ],
+                        [
+                            3,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        1,
+                        3
+                    ],
+                    "resource": "aws.default",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.provider.aws.credentials",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/secrets-policies/bc-aws-secrets-5",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "breadcrumbs": {
+                        "region": [
+                            {
+                                "type": "variable",
+                                "name": "region",
+                                "path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/variables.tf",
+                                "module_connection": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_277",
+                    "bc_check_id": "BC_AWS_NETWORKING_78",
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngressAny",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-aws-security-group-does-not-allow-all-traffic-on-all-ports",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_AWS_25",
+                    "bc_check_id": "BC_AWS_NETWORKING_2",
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngress3389",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-2",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_AWS_24",
+                    "bc_check_id": "BC_AWS_NETWORKING_1",
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22",
+                    "check_result": {
+                        "result": "PASSED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngress22",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-1-port-security",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                }
+            ],
+            "failed_checks": [
+                {
+                    "check_id": "CKV_TF_1",
+                    "bc_check_id": "BC_CROSS_1",
+                    "check_name": "Ensure Terraform module sources use a commit hash",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            54,
+                            "module \"eks\" {\n"
+                        ],
+                        [
+                            55,
+                            "  source          = \"terraform-aws-modules/eks/aws\"\n"
+                        ],
+                        [
+                            56,
+                            "  cluster_name    = \"dev-sec-ops-cluster\"\n"
+                        ],
+                        [
+                            57,
+                            "  cluster_version = \"1.27\"\n"
+                        ],
+                        [
+                            58,
+                            "  subnets         = aws_subnet.public[*].id\n"
+                        ],
+                        [
+                            59,
+                            "  vpc_id          = aws_vpc.main.id\n"
+                        ],
+                        [
+                            60,
+                            "\n"
+                        ],
+                        [
+                            61,
+                            "  node_groups = {\n"
+                        ],
+                        [
+                            62,
+                            "    devsecops_nodes = {\n"
+                        ],
+                        [
+                            63,
+                            "      desired_capacity = 2\n"
+                        ],
+                        [
+                            64,
+                            "      max_capacity     = 3\n"
+                        ],
+                        [
+                            65,
+                            "      min_capacity     = 1\n"
+                        ],
+                        [
+                            66,
+                            "\n"
+                        ],
+                        [
+                            67,
+                            "      instance_type = \"t3.medium\"\n"
+                        ],
+                        [
+                            68,
+                            "    }\n"
+                        ],
+                        [
+                            69,
+                            "  }\n"
+                        ],
+                        [
+                            70,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        54,
+                        70
+                    ],
+                    "resource": "eks",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.module.generic.RevisionHash",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-git-url-with-commit-hash-revision",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_TF_2",
+                    "bc_check_id": "BC_CROSS_2",
+                    "check_name": "Ensure Terraform module sources use a tag with a version number",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": []
+                    },
+                    "code_block": [
+                        [
+                            54,
+                            "module \"eks\" {\n"
+                        ],
+                        [
+                            55,
+                            "  source          = \"terraform-aws-modules/eks/aws\"\n"
+                        ],
+                        [
+                            56,
+                            "  cluster_name    = \"dev-sec-ops-cluster\"\n"
+                        ],
+                        [
+                            57,
+                            "  cluster_version = \"1.27\"\n"
+                        ],
+                        [
+                            58,
+                            "  subnets         = aws_subnet.public[*].id\n"
+                        ],
+                        [
+                            59,
+                            "  vpc_id          = aws_vpc.main.id\n"
+                        ],
+                        [
+                            60,
+                            "\n"
+                        ],
+                        [
+                            61,
+                            "  node_groups = {\n"
+                        ],
+                        [
+                            62,
+                            "    devsecops_nodes = {\n"
+                        ],
+                        [
+                            63,
+                            "      desired_capacity = 2\n"
+                        ],
+                        [
+                            64,
+                            "      max_capacity     = 3\n"
+                        ],
+                        [
+                            65,
+                            "      min_capacity     = 1\n"
+                        ],
+                        [
+                            66,
+                            "\n"
+                        ],
+                        [
+                            67,
+                            "      instance_type = \"t3.medium\"\n"
+                        ],
+                        [
+                            68,
+                            "    }\n"
+                        ],
+                        [
+                            69,
+                            "  }\n"
+                        ],
+                        [
+                            70,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        54,
+                        70
+                    ],
+                    "resource": "eks",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.module.generic.RevisionVersionTag",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/supply-chain-policies/terraform-policies/ensure-terraform-module-sources-use-tag",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_AWS_130",
+                    "bc_check_id": "BC_AWS_NETWORKING_53",
+                    "check_name": "Ensure VPC subnets do not assign public IP by default",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "map_public_ip_on_launch"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            14,
+                            "resource \"aws_subnet\" \"public\" {\n"
+                        ],
+                        [
+                            15,
+                            "  count                   = length(var.public_subnet_cidrs)\n"
+                        ],
+                        [
+                            16,
+                            "  vpc_id                  = aws_vpc.main.id\n"
+                        ],
+                        [
+                            17,
+                            "  cidr_block              = var.public_subnet_cidrs[count.index]\n"
+                        ],
+                        [
+                            18,
+                            "  map_public_ip_on_launch = true\n"
+                        ],
+                        [
+                            19,
+                            "  availability_zone       = element(var.azs, count.index)\n"
+                        ],
+                        [
+                            20,
+                            "  tags = {\n"
+                        ],
+                        [
+                            21,
+                            "    Name = \"public-${count.index}\"\n"
+                        ],
+                        [
+                            22,
+                            "  }\n"
+                        ],
+                        [
+                            23,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        14,
+                        23
+                    ],
+                    "resource": "aws_subnet.public[0]",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SubnetPublicIP",
+                    "fixed_definition": null,
+                    "entity_tags": {
+                        "Name": "public-0"
+                    },
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-vpc-subnets-do-not-assign-public-ip-by-default",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "breadcrumbs": {
+                        "availability_zone": [
+                            {
+                                "type": "variable",
+                                "name": "azs",
+                                "path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/variables.tf",
+                                "module_connection": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV_AWS_23",
+                    "bc_check_id": "BC_AWS_NETWORKING_31",
+                    "check_name": "Ensure every security group and rule has a description",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "description",
+                            "egress/[0]",
+                            "ingress/[0]"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupRuleDescription",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-31",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_AWS_260",
+                    "bc_check_id": "BC_AWS_NETWORKING_67",
+                    "check_name": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "ingress/[0]/from_port",
+                            "ingress/[0]/to_port",
+                            "ingress/[0]/cidr_blocks",
+                            "ingress/[0]/ipv6_cidr_blocks"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedIngress80",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-aws-security-groups-do-not-allow-ingress-from-00000-to-port-80",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_AWS_382",
+                    "bc_check_id": "BC_AWS_IAM_93",
+                    "check_name": "Ensure no security groups allow egress from 0.0.0.0:0 to port -1",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "egress/[0]/from_port",
+                            "egress/[0]/to_port",
+                            "egress/[0]/cidr_blocks",
+                            "egress/[0]/ipv6_cidr_blocks"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SecurityGroupUnrestrictedEgressAny",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/bc-aws-382",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                },
+                {
+                    "check_id": "CKV_AWS_130",
+                    "bc_check_id": "BC_AWS_NETWORKING_53",
+                    "check_name": "Ensure VPC subnets do not assign public IP by default",
+                    "check_result": {
+                        "result": "FAILED",
+                        "evaluated_keys": [
+                            "map_public_ip_on_launch"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            14,
+                            "resource \"aws_subnet\" \"public\" {\n"
+                        ],
+                        [
+                            15,
+                            "  count                   = length(var.public_subnet_cidrs)\n"
+                        ],
+                        [
+                            16,
+                            "  vpc_id                  = aws_vpc.main.id\n"
+                        ],
+                        [
+                            17,
+                            "  cidr_block              = var.public_subnet_cidrs[count.index]\n"
+                        ],
+                        [
+                            18,
+                            "  map_public_ip_on_launch = true\n"
+                        ],
+                        [
+                            19,
+                            "  availability_zone       = element(var.azs, count.index)\n"
+                        ],
+                        [
+                            20,
+                            "  tags = {\n"
+                        ],
+                        [
+                            21,
+                            "    Name = \"public-${count.index}\"\n"
+                        ],
+                        [
+                            22,
+                            "  }\n"
+                        ],
+                        [
+                            23,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        14,
+                        23
+                    ],
+                    "resource": "aws_subnet.public[1]",
+                    "evaluations": null,
+                    "check_class": "checkov.terraform.checks.resource.aws.SubnetPublicIP",
+                    "fixed_definition": null,
+                    "entity_tags": {
+                        "Name": "public-1"
+                    },
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-vpc-subnets-do-not-assign-public-ip-by-default",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "breadcrumbs": {
+                        "availability_zone": [
+                            {
+                                "type": "variable",
+                                "name": "azs",
+                                "path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/variables.tf",
+                                "module_connection": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV2_AWS_11",
+                    "bc_check_id": "BC_AWS_LOGGING_9",
+                    "check_name": "Ensure VPC flow logging is enabled in all VPCs",
+                    "check_result": {
+                        "result": "FAILED",
+                        "entity": {
+                            "aws_vpc": {
+                                "main": {
+                                    "__end_line__": 11,
+                                    "__start_line__": 6,
+                                    "cidr_block": [
+                                        "10.0.0.0/16"
+                                    ],
+                                    "tags": [
+                                        {
+                                            "Name": "dev-sec-ops-vpc"
+                                        }
+                                    ],
+                                    "__address__": "aws_vpc.main",
+                                    "__provider_address__": "aws.default"
+                                }
+                            }
+                        },
+                        "evaluated_keys": [
+                            "resource_type",
+                            "networking"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            6,
+                            "resource \"aws_vpc\" \"main\" {\n"
+                        ],
+                        [
+                            7,
+                            "  cidr_block = var.vpc_cidr\n"
+                        ],
+                        [
+                            8,
+                            "  tags = {\n"
+                        ],
+                        [
+                            9,
+                            "    Name = \"dev-sec-ops-vpc\"\n"
+                        ],
+                        [
+                            10,
+                            "  }\n"
+                        ],
+                        [
+                            11,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        6,
+                        11
+                    ],
+                    "resource": "aws_vpc.main",
+                    "evaluations": null,
+                    "check_class": "checkov.common.graph.checks_infra.base_check",
+                    "fixed_definition": null,
+                    "entity_tags": {
+                        "Name": "dev-sec-ops-vpc"
+                    },
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-logging-policies/logging-9-enable-vpc-flow-logging",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "breadcrumbs": {
+                        "cidr_block": [
+                            {
+                                "type": "variable",
+                                "name": "vpc_cidr",
+                                "path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/variables.tf",
+                                "module_connection": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV2_AWS_12",
+                    "bc_check_id": "BC_AWS_NETWORKING_4",
+                    "check_name": "Ensure the default security group of every VPC restricts all traffic",
+                    "check_result": {
+                        "result": "FAILED",
+                        "entity": {
+                            "aws_vpc": {
+                                "main": {
+                                    "__end_line__": 11,
+                                    "__start_line__": 6,
+                                    "cidr_block": [
+                                        "10.0.0.0/16"
+                                    ],
+                                    "tags": [
+                                        {
+                                            "Name": "dev-sec-ops-vpc"
+                                        }
+                                    ],
+                                    "__address__": "aws_vpc.main",
+                                    "__provider_address__": "aws.default"
+                                }
+                            }
+                        },
+                        "evaluated_keys": [
+                            "ingress/from_port",
+                            "egress/cidr_blocks",
+                            "ingress/to_port",
+                            "egress/to_port",
+                            "ingress/protocol",
+                            "resource_type",
+                            "egress/protocol",
+                            "egress/from_port",
+                            "ingress/self"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            6,
+                            "resource \"aws_vpc\" \"main\" {\n"
+                        ],
+                        [
+                            7,
+                            "  cidr_block = var.vpc_cidr\n"
+                        ],
+                        [
+                            8,
+                            "  tags = {\n"
+                        ],
+                        [
+                            9,
+                            "    Name = \"dev-sec-ops-vpc\"\n"
+                        ],
+                        [
+                            10,
+                            "  }\n"
+                        ],
+                        [
+                            11,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        6,
+                        11
+                    ],
+                    "resource": "aws_vpc.main",
+                    "evaluations": null,
+                    "check_class": "checkov.common.graph.checks_infra.base_check",
+                    "fixed_definition": null,
+                    "entity_tags": {
+                        "Name": "dev-sec-ops-vpc"
+                    },
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-4",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "breadcrumbs": {
+                        "cidr_block": [
+                            {
+                                "type": "variable",
+                                "name": "vpc_cidr",
+                                "path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/variables.tf",
+                                "module_connection": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "check_id": "CKV2_AWS_5",
+                    "bc_check_id": "BC_AWS_NETWORKING_51",
+                    "check_name": "Ensure that Security Groups are attached to another resource",
+                    "check_result": {
+                        "result": "FAILED",
+                        "entity": {
+                            "aws_security_group": {
+                                "app_sg": {
+                                    "__end_line__": 51,
+                                    "__start_line__": 26,
+                                    "description": [
+                                        "Allow HTTP/HTTPS"
+                                    ],
+                                    "egress": [
+                                        {
+                                            "cidr_blocks": [
+                                                [
+                                                    "0.0.0.0/0"
+                                                ]
+                                            ],
+                                            "from_port": [
+                                                0
+                                            ],
+                                            "protocol": [
+                                                "-1"
+                                            ],
+                                            "to_port": [
+                                                0
+                                            ]
+                                        }
+                                    ],
+                                    "ingress": [
+                                        {
+                                            "cidr_blocks": [
+                                                [
+                                                    "0.0.0.0/0"
+                                                ]
+                                            ],
+                                            "from_port": [
+                                                80
+                                            ],
+                                            "protocol": [
+                                                "tcp"
+                                            ],
+                                            "to_port": [
+                                                80
+                                            ]
+                                        },
+                                        {
+                                            "cidr_blocks": [
+                                                [
+                                                    "0.0.0.0/0"
+                                                ]
+                                            ],
+                                            "from_port": [
+                                                443
+                                            ],
+                                            "protocol": [
+                                                "tcp"
+                                            ],
+                                            "to_port": [
+                                                443
+                                            ]
+                                        }
+                                    ],
+                                    "name": [
+                                        "dev-sec-ops-sg"
+                                    ],
+                                    "vpc_id": [
+                                        "aws_vpc.main.id"
+                                    ],
+                                    "__address__": "aws_security_group.app_sg",
+                                    "__provider_address__": "aws.default"
+                                }
+                            }
+                        },
+                        "evaluated_keys": [
+                            "resource_type",
+                            "networking"
+                        ]
+                    },
+                    "code_block": [
+                        [
+                            26,
+                            "resource \"aws_security_group\" \"app_sg\" {\n"
+                        ],
+                        [
+                            27,
+                            "  name        = \"dev-sec-ops-sg\"\n"
+                        ],
+                        [
+                            28,
+                            "  description = \"Allow HTTP/HTTPS\"\n"
+                        ],
+                        [
+                            29,
+                            "  vpc_id      = aws_vpc.main.id\n"
+                        ],
+                        [
+                            30,
+                            "\n"
+                        ],
+                        [
+                            31,
+                            "  ingress {\n"
+                        ],
+                        [
+                            32,
+                            "    from_port   = 80\n"
+                        ],
+                        [
+                            33,
+                            "    to_port     = 80\n"
+                        ],
+                        [
+                            34,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            35,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            36,
+                            "  }\n"
+                        ],
+                        [
+                            37,
+                            "\n"
+                        ],
+                        [
+                            38,
+                            "  ingress {\n"
+                        ],
+                        [
+                            39,
+                            "    from_port   = 443\n"
+                        ],
+                        [
+                            40,
+                            "    to_port     = 443\n"
+                        ],
+                        [
+                            41,
+                            "    protocol    = \"tcp\"\n"
+                        ],
+                        [
+                            42,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            43,
+                            "  }\n"
+                        ],
+                        [
+                            44,
+                            "\n"
+                        ],
+                        [
+                            45,
+                            "  egress {\n"
+                        ],
+                        [
+                            46,
+                            "    from_port   = 0\n"
+                        ],
+                        [
+                            47,
+                            "    to_port     = 0\n"
+                        ],
+                        [
+                            48,
+                            "    protocol    = \"-1\"\n"
+                        ],
+                        [
+                            49,
+                            "    cidr_blocks = [\"0.0.0.0/0\"]\n"
+                        ],
+                        [
+                            50,
+                            "  }\n"
+                        ],
+                        [
+                            51,
+                            "}\n"
+                        ]
+                    ],
+                    "file_path": "/terraform/main.tf",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf",
+                    "repo_file_path": "/infra/terraform/main.tf",
+                    "file_line_range": [
+                        26,
+                        51
+                    ],
+                    "resource": "aws_security_group.app_sg",
+                    "evaluations": null,
+                    "check_class": "checkov.common.graph.checks_infra.base_check",
+                    "fixed_definition": null,
+                    "entity_tags": {},
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-that-security-groups-are-attached-to-ec2-instances-or-elastic-network-interfaces-enis",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/terraform/main.tf"
+                }
+            ],
+            "skipped_checks": [],
+            "parsing_errors": []
+        },
+        "summary": {
+            "passed": 4,
+            "failed": 10,
+            "skipped": 0,
+            "parsing_errors": 0,
+            "resource_count": 4,
+            "checkov_version": "3.2.470"
+        },
+        "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+    },
+    {
+        "check_type": "ansible",
+        "results": {
+            "passed_checks": [
+                {
+                    "check_id": "CKV_ANSIBLE_6",
+                    "bc_check_id": "BC_ANSIBLE_GENERAL6",
+                    "check_name": "Ensure that the force parameter is not used, as it disables signature validation and allows packages to be downgraded which can leave the system in a broken or inconsistent state",
+                    "check_result": {
+                        "result": "PASSED",
+                        "results_configuration": {
+                            "name": "Ensure UFW firewall is installed",
+                            "apt": {
+                                "name": "ufw",
+                                "state": "present",
+                                "update_cache": true,
+                                "__startline__": 10,
+                                "__endline__": 14
+                            },
+                            "__startline__": 8,
+                            "__endline__": 14
+                        }
+                    },
+                    "code_block": [
+                        [
+                            8,
+                            "- name: Ensure UFW firewall is installed\n"
+                        ],
+                        [
+                            9,
+                            "  apt:\n"
+                        ],
+                        [
+                            10,
+                            "    name: ufw\n"
+                        ],
+                        [
+                            11,
+                            "    state: present\n"
+                        ],
+                        [
+                            12,
+                            "    update_cache: yes\n"
+                        ],
+                        [
+                            13,
+                            "\n"
+                        ],
+                        [
+                            14,
+                            "- name: Enable UFW firewall\n"
+                        ],
+                        [
+                            15,
+                            "  ufw:\n"
+                        ]
+                    ],
+                    "file_path": "/ansible/roles/hardening/tasks/main.yml",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                    "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                    "file_line_range": [
+                        8,
+                        15
+                    ],
+                    "resource": "tasks.apt.Ensure UFW firewall is installed",
+                    "evaluations": null,
+                    "check_class": "checkov.ansible.checks.task.builtin.AptForce",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-6",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": null
+                },
+                {
+                    "check_id": "CKV_ANSIBLE_6",
+                    "bc_check_id": "BC_ANSIBLE_GENERAL6",
+                    "check_name": "Ensure that the force parameter is not used, as it disables signature validation and allows packages to be downgraded which can leave the system in a broken or inconsistent state",
+                    "check_result": {
+                        "result": "PASSED",
+                        "results_configuration": {
+                            "name": "Ensure automatic security updates are enabled",
+                            "apt": {
+                                "name": "unattended-upgrades",
+                                "state": "latest",
+                                "__startline__": 29,
+                                "__endline__": 32
+                            },
+                            "__startline__": 27,
+                            "__endline__": 32
+                        }
+                    },
+                    "code_block": [
+                        [
+                            27,
+                            "- name: Ensure automatic security updates are enabled\n"
+                        ],
+                        [
+                            28,
+                            "  apt:\n"
+                        ],
+                        [
+                            29,
+                            "    name: unattended-upgrades\n"
+                        ],
+                        [
+                            30,
+                            "    state: latest\n"
+                        ],
+                        [
+                            31,
+                            "\n"
+                        ],
+                        [
+                            32,
+                            "- name: Disable root login\n"
+                        ],
+                        [
+                            33,
+                            "  user:\n"
+                        ]
+                    ],
+                    "file_path": "/ansible/roles/hardening/tasks/main.yml",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                    "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                    "file_line_range": [
+                        27,
+                        33
+                    ],
+                    "resource": "tasks.apt.Ensure automatic security updates are enabled",
+                    "evaluations": null,
+                    "check_class": "checkov.ansible.checks.task.builtin.AptForce",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-6",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": null
+                },
+                {
+                    "check_id": "CKV_ANSIBLE_5",
+                    "bc_check_id": "BC_ANSIBLE_GENERAL5",
+                    "check_name": "Ensure that packages with untrusted or missing signatures are not used",
+                    "check_result": {
+                        "result": "PASSED",
+                        "results_configuration": {
+                            "name": "Ensure UFW firewall is installed",
+                            "apt": {
+                                "name": "ufw",
+                                "state": "present",
+                                "update_cache": true,
+                                "__startline__": 10,
+                                "__endline__": 14
+                            },
+                            "__startline__": 8,
+                            "__endline__": 14
+                        }
+                    },
+                    "code_block": [
+                        [
+                            8,
+                            "- name: Ensure UFW firewall is installed\n"
+                        ],
+                        [
+                            9,
+                            "  apt:\n"
+                        ],
+                        [
+                            10,
+                            "    name: ufw\n"
+                        ],
+                        [
+                            11,
+                            "    state: present\n"
+                        ],
+                        [
+                            12,
+                            "    update_cache: yes\n"
+                        ],
+                        [
+                            13,
+                            "\n"
+                        ],
+                        [
+                            14,
+                            "- name: Enable UFW firewall\n"
+                        ],
+                        [
+                            15,
+                            "  ufw:\n"
+                        ]
+                    ],
+                    "file_path": "/ansible/roles/hardening/tasks/main.yml",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                    "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                    "file_line_range": [
+                        8,
+                        15
+                    ],
+                    "resource": "tasks.apt.Ensure UFW firewall is installed",
+                    "evaluations": null,
+                    "check_class": "checkov.ansible.checks.task.builtin.AptAllowUnauthenticated",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-5",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": null
+                },
+                {
+                    "check_id": "CKV_ANSIBLE_5",
+                    "bc_check_id": "BC_ANSIBLE_GENERAL5",
+                    "check_name": "Ensure that packages with untrusted or missing signatures are not used",
+                    "check_result": {
+                        "result": "PASSED",
+                        "results_configuration": {
+                            "name": "Ensure automatic security updates are enabled",
+                            "apt": {
+                                "name": "unattended-upgrades",
+                                "state": "latest",
+                                "__startline__": 29,
+                                "__endline__": 32
+                            },
+                            "__startline__": 27,
+                            "__endline__": 32
+                        }
+                    },
+                    "code_block": [
+                        [
+                            27,
+                            "- name: Ensure automatic security updates are enabled\n"
+                        ],
+                        [
+                            28,
+                            "  apt:\n"
+                        ],
+                        [
+                            29,
+                            "    name: unattended-upgrades\n"
+                        ],
+                        [
+                            30,
+                            "    state: latest\n"
+                        ],
+                        [
+                            31,
+                            "\n"
+                        ],
+                        [
+                            32,
+                            "- name: Disable root login\n"
+                        ],
+                        [
+                            33,
+                            "  user:\n"
+                        ]
+                    ],
+                    "file_path": "/ansible/roles/hardening/tasks/main.yml",
+                    "file_abs_path": "/home/mohammad-abdul-hakim/Desktop/go-fiber-devsecops/dev-sec-ops-copy/infra/ansible/roles/hardening/tasks/main.yml",
+                    "repo_file_path": "/infra/ansible/roles/hardening/tasks/main.yml",
+                    "file_line_range": [
+                        27,
+                        33
+                    ],
+                    "resource": "tasks.apt.Ensure automatic security updates are enabled",
+                    "evaluations": null,
+                    "check_class": "checkov.ansible.checks.task.builtin.AptAllowUnauthenticated",
+                    "fixed_definition": null,
+                    "entity_tags": null,
+                    "caller_file_path": null,
+                    "caller_file_line_range": null,
+                    "resource_address": null,
+                    "severity": null,
+                    "bc_category": null,
+                    "benchmarks": null,
+                    "description": null,
+                    "short_description": null,
+                    "vulnerability_details": null,
+                    "connected_node": null,
+                    "guideline": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/ansible-policies/ansible-compute-policies/ansible-5",
+                    "details": [],
+                    "check_len": null,
+                    "definition_context_file_path": null
+                }
+            ],
+            "failed_checks": [],
+            "skipped_checks": [],
+            "parsing_errors": []
+        },
+        "summary": {
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0,
+            "parsing_errors": 0,
+            "resource_count": 0,
+            "checkov_version": "3.2.470"
+        },
+        "url": "Add an api key '--bc-api-key <api-key>' to see more detailed insights via https://bridgecrew.cloud"
+    }
+]

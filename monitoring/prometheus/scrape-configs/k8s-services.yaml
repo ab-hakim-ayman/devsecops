@@ -1,0 +1,22 @@
+# Scrape Kubernetes services annotated for Prometheus
+- job_name: "k8s-services"
+  kubernetes_sd_configs:
+    - role: endpoints
+  relabel_configs:
+    # Keep only pods annotated for scraping
+    - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+      action: keep
+      regex: true
+    # Set metrics path from annotation
+    - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_path]
+      action: replace
+      target_label: __metrics_path__
+      regex: (.+)
+    # Set port from annotation
+    - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_port]
+      action: replace
+      target_label: __address__
+      regex: (.+)
+      replacement: $1
+    - action: labelmap
+      regex: __meta_kubernetes_service_label_(.+)

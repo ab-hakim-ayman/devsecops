@@ -1,0 +1,16 @@
+# values.yaml for kube-state-metrics Helm chart
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 200Mi
+  limits:
+    cpu: 500m
+    memory: 500Mi
+
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: prometheus
+  interval: 15s

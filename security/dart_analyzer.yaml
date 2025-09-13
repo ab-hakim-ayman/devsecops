@@ -1,0 +1,9 @@
+analyzer:
+  strong-mode: true
+  errors:
+    dead_code: warning
+    unused_import: error
+linter:
+  rules:
+    - avoid_print
+    - secure_pubspec_urls

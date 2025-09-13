@@ -1,0 +1,5 @@
+# Elastic APM exporter for traces
+exporters:
+  elasticapm:
+    server_url: "http://elastic-apm-server.logging.svc.cluster.local:8200"
+    secret_token: "CHANGE_ME" # Store this in Kubernetes Secret
